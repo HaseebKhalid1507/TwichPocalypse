@@ -6,6 +6,9 @@
 # Auth file
 auth.py
 
+# History file
+history.txt
+
 # User-specific files
 *.rsuser
 *.suo
