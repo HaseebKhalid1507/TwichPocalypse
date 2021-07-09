@@ -18,9 +18,11 @@ def twichdl(post):
     mp4_url = thumb_url.split("-preview",1)[0] + ".mp4"
     out_filename = post.title + ".mp4"
     output_path = (basepath + out_filename)
-    
-    urllib.request.urlretrieve(mp4_url, output_path)
-    print("downloaded from twich")
+    try:
+        urllib.request.urlretrieve(mp4_url, output_path)
+        print("downloaded from twich")
+    except:
+        print("Could not download die to error")
 
 #   UPLOAD VIDEO TO YOUTUBE
 def tubeup(post):
@@ -30,6 +32,12 @@ def tubeup(post):
 #   CREATE FILE OBJECT TO STORE POSTED VIDEOS
 posted = open('history.txt', 'r+')
 readfile = posted.read()
+
+#   MANAGE DIRECTORY
+directory = 'videos'
+path = os.path.join('.', directory)
+if not os.path.isdir(path):
+    os.mkdir(path)
 
 #   GET HOTTEST POSTS FROM R/LIVESTREAMFAIL
 hot_posts = auth.reddit.subreddit('livestreamfail').hot(limit=20)
