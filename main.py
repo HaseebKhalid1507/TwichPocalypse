@@ -2,6 +2,7 @@ import requests
 import urllib.request
 import os
 
+import ytup
 import auth
 
 #   DOWNLOAD CLIP FROM TWICH
@@ -26,8 +27,7 @@ def twichdl(post):
 
 #   UPLOAD VIDEO TO YOUTUBE
 def tubeup(post):
-    # https://developers.google.com/youtube/v3/guides/uploading_a_video
-    pass
+    ytup.uploadmp4(post)
 
 #   CREATE FILE OBJECT TO STORE POSTED VIDEOS
 posted = open('history.txt', 'r+')

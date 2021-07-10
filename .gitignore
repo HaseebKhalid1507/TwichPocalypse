@@ -5,9 +5,13 @@
 
 # Auth file
 auth.py
+youtube-secret.json
 
 # History file
 history.txt
+
+# Pickle file
+*.pickle
 
 # User-specific files
 *.rsuser
